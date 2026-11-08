@@ -37,9 +37,9 @@ flowchart TD
     metrics --> registries[Build character roster, conflict beats and episode endings]
     registries --> key{Gemini API key configured?}
     key -->|Yes| prompt[Build prompt from overview, top cast, up to 40 beats and episode endings]
-    prompt --> call[Call Gemini Interactions API for JSON]
-    call -->|Response| validate[Validate response and recompute durations]
-    call -->|Request/API failure| cache{Cache digest matches input?}
+    prompt --> apiRequest[Call Gemini Interactions API for JSON]
+    apiRequest -->|Response| validate[Validate response and recompute durations]
+    apiRequest -->|Request/API failure| cache{Cache digest matches input?}
     key -->|No| cache
     cache -->|Yes| cached[Load cached promo response]
     cache -->|No| offline[Generate and rank screenplay-grounded candidates]
