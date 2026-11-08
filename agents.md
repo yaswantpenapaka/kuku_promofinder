@@ -63,11 +63,12 @@
 
 ### Module 2: `promo_engine.py`
 - **Class `PromoEngine`:**
-  - Initializes Gemini client using `GEMINI_API_KEY` (from environment or Streamlit sidebar input).
+  - Initializes Gemini client using `GEMINI_API_KEY` from the local `.env` file; never renders the key in the dashboard.
   - Method `generate_promos(analytics, character_roster, beat_registry, episode_endings) -> PromoResponse`:
     - Constructs the prompt using the templated instructions in `prompt.md`.
     - Implements strict Pydantic/TypedDict JSON parsing.
     - Enforces duration boundaries: If any promo duration $< 20.0$ or $> 60.0$ seconds, automatically recalculates or clips timestamps to legitimate screenplay scene beats.
+    - Uses the Gemini Interactions API with a JSON response schema.
     - **Fallback Offline Cache:** If no API key is supplied or network fails, automatically loads pre-extracted, verified golden promos from `cached_promos.json` to ensure the prototype never breaks during review or live demo.
 
 ### Module 3: `app.py`
@@ -90,4 +91,3 @@
 3. **Clean Code Structure:** Keep functions modular, type-annotated, and well-documented. Do not write one single giant unmaintainable file.
 4. **No Hallucinated Script Text:** Dialogue presented in promo cards must be exact verbatim excerpts from the parsed screenplay text.
 5. **Human in the Loop:** Include an "Edit Cutpoints" or "Copy Promo Clip Specs" feature on each promo card so an editor can easily tweak in/out points.
-

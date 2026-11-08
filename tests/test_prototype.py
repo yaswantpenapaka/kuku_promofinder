@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import Mock, patch
 
 from parser import Episode, Scene, ScreenplayParser, format_time, parse_time
 from promo_engine import PromoEngine, PromoValidationError
@@ -86,6 +87,21 @@ class PromoValidationTests(unittest.TestCase):
         PromoEngine.validate_response(self._response(), self.analytics)
         with self.assertRaises(PromoValidationError):
             PromoEngine.validate_response(self._response(19.9), self.analytics)
+
+    def test_requests_structured_output_via_interactions_api(self):
+        interaction = type("Interaction", (), {"output_text": '{"promos": []}'})()
+        interactions = Mock()
+        interactions.create.return_value = interaction
+        client = Mock()
+        client.interactions = interactions
+        engine = PromoEngine(api_key="test-key")
+        with patch("promo_engine.genai.Client", return_value=client):
+            result = engine._request_gemini(self.analytics)
+        self.assertEqual(result, {"promos": []})
+        request = interactions.create.call_args.kwargs
+        self.assertEqual(request["model"], "gemini-3.8-flash")
+        self.assertEqual(request["response_format"]["mime_type"], "application/json")
+        self.assertIn("You are an expert", request["input"])
 
 
 if __name__ == "__main__":

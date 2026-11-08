@@ -10,7 +10,7 @@ from pathlib import Path
 
 import httpx
 from google import genai
-from google.genai import errors, types
+from google.genai import errors
 
 from parser import Episode, ScriptAnalytics, Scene, ScriptEvent, format_time, parse_time
 
@@ -29,6 +29,74 @@ HIGH_DRAMA_TONES = {
     "bitter", "callous", "cruel", "desperate", "devastated", "fierce", "furious",
     "gloating", "imposing", "mocking", "outraged", "scornful", "smug", "threatening",
 }
+RESPONSE_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "genre_analysis": {
+            "type": "object",
+            "properties": {
+                "primary_genre": {"type": "string"},
+                "sub_genres": {"type": "array", "items": {"type": "string"}},
+                "marketing_hook_summary": {"type": "string"},
+            },
+            "required": ["primary_genre", "sub_genres", "marketing_hook_summary"],
+        },
+        "promos": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "rank": {"type": "integer"},
+                    "promo_title": {"type": "string"},
+                    "promo_type": {"type": "string"},
+                    "target_audience_appeal": {"type": "string"},
+                    "total_duration_sec": {"type": "number"},
+                    "segments": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "order": {"type": "integer"},
+                                "episode": {"type": "integer"},
+                                "start_time": {"type": "string"},
+                                "end_time": {"type": "string"},
+                                "duration_sec": {"type": "number"},
+                                "role": {"type": "string"},
+                            },
+                            "required": [
+                                "order", "episode", "start_time", "end_time", "duration_sec", "role",
+                            ],
+                        },
+                    },
+                    "hook": {
+                        "type": "object",
+                        "properties": {
+                            "timestamp_start": {"type": "string"},
+                            "description": {"type": "string"},
+                        },
+                        "required": ["timestamp_start", "description"],
+                    },
+                    "cliffhanger": {
+                        "type": "object",
+                        "properties": {
+                            "timestamp_end": {"type": "string"},
+                            "description": {"type": "string"},
+                        },
+                        "required": ["timestamp_end", "description"],
+                    },
+                    "why_it_works": {"type": "string"},
+                    "posting_priority_rationale": {"type": "string"},
+                },
+                "required": [
+                    "rank", "promo_title", "promo_type", "target_audience_appeal",
+                    "total_duration_sec", "segments", "hook", "cliffhanger",
+                    "why_it_works", "posting_priority_rationale",
+                ],
+            },
+        },
+    },
+    "required": ["genre_analysis", "promos"],
+}
 
 
 class PromoValidationError(ValueError):
@@ -43,12 +111,12 @@ class PromoEngine:
     def __init__(
         self,
         api_key: str = "",
-        model_name: str = "gemini-2.0-flash",
+        model_name: str = "gemini-3.8-flash",
         cache_path: str | Path | None = None,
         prompt_path: str | Path | None = None,
     ) -> None:
         self.api_key = api_key.strip()
-        self.model_name = model_name.strip() or "gemini-2.0-flash"
+        self.model_name = model_name.strip() or "gemini-3.8-flash"
         self.cache_path = Path(cache_path) if cache_path else Path(__file__).with_name("cached_promos.json")
         self.prompt_path = Path(prompt_path) if prompt_path else Path(__file__).with_name("prompt.md")
 
@@ -83,19 +151,18 @@ class PromoEngine:
 
     def _request_gemini(self, analytics: ScriptAnalytics) -> dict:
         client = genai.Client(api_key=self.api_key)
-        contents = self._user_prompt(analytics)
-        result = client.models.generate_content(
+        interaction = client.interactions.create(
             model=self.model_name,
-            contents=contents,
-            config=types.GenerateContentConfig(
-                system_instruction=self._system_prompt(),
-                response_mime_type="application/json",
-                temperature=0.25,
-            ),
+            input=f"{self._system_prompt()}\n\n{self._user_prompt(analytics)}",
+            response_format={
+                "type": "text",
+                "mime_type": "application/json",
+                "schema": RESPONSE_SCHEMA,
+            },
         )
-        if not result.text:
+        if not interaction.output_text:
             raise PromoValidationError("Gemini returned an empty response.")
-        return json.loads(result.text)
+        return json.loads(interaction.output_text)
 
     def _user_prompt(self, analytics: ScriptAnalytics) -> str:
         template = self._prompt_template()

@@ -15,8 +15,8 @@ and a screenplay-specific cache.
    ```
 
 3. Add a Gemini key to `.env` if desired. Set `GEMINI_MODEL` to the model name
-   available to your API key. Both fields are optional; leave the key blank for
-   offline mode.
+   available to your API key (default: `gemini-3.8-flash`). The key is read from
+   `.env` and is never shown in the dashboard. Leave it blank for offline mode.
 4. Start the dashboard:
 
    ```powershell

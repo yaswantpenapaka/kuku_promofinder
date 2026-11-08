@@ -24,7 +24,7 @@ DEFAULT_ZIP = APP_DIR.parent / "I Married a Broken Soldier. He was a Duke-script
 DEFAULT_DIRECTORY = APP_DIR.parent / "I Married a Broken Soldier. He was a Duke"
 OUTPUT_DIR = APP_DIR / "outputs"
 
-load_dotenv(APP_DIR / ".env")
+load_dotenv(APP_DIR / ".env", override=True)
 
 st.set_page_config(
     page_title="Kuku Promo Finder",
@@ -266,15 +266,16 @@ def main() -> None:
     with st.sidebar:
         st.header("Analyze a screenplay")
         upload = st.file_uploader("Upload episode ZIP", type=["zip"])
-        api_key = st.text_input(
-            "Gemini API key",
-            value=os.getenv("GEMINI_API_KEY", ""),
-            type="password",
-            help="Optional. Without a key, the verified cache or offline ranking is used.",
+        api_key = os.getenv("GEMINI_API_KEY", "").strip().strip('"').strip("'")
+        st.caption(
+            "Gemini API key loaded from `.env`."
+            if api_key
+            else "No Gemini API key found in `.env`; offline mode will be used."
         )
         model_name = st.text_input(
             "Gemini model",
-            value=os.getenv("GEMINI_MODEL", "gemini-2.0-flash"),
+            value=os.getenv("GEMINI_MODEL", "gemini-3.8-flash"),
+            help="Model names depend on availability for your Gemini API key.",
         )
         st.caption("Or use the default local screenplay archive when no upload is selected.")
         analyze = st.button("Analyze scripts", type="primary", width="stretch")
