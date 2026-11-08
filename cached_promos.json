@@ -1,0 +1,341 @@
+{
+  "source_digest": "5d66d780f55480372977e13a278e26537adaed4936215a6afa6b0bcc108b4ccf",
+  "response": {
+    "genre_analysis": {
+      "primary_genre": "Aristocratic Romance / Revenge Drama",
+      "sub_genres": [
+        "Revenge Drama",
+        "Aristocratic Romance"
+      ],
+      "marketing_hook_summary": "A betrayed heroine confronts public humiliation and fights for control as powerful rivals and unexpected allies reshape her future."
+    },
+    "promos": [
+      {
+        "rank": 1,
+        "promo_title": "Power reversal: I cannot marry you, Juliana.",
+        "promo_type": "Multi-Segment Arc",
+        "target_audience_appeal": "Viewers drawn to betrayal, status conflict, and a heroine facing public pressure.",
+        "total_duration_sec": 32.0,
+        "segments": [
+          {
+            "order": 1,
+            "episode": 2,
+            "start_time": "00:00.00",
+            "end_time": "00:14.00",
+            "duration_sec": 14.0,
+            "role": "Hook: I cannot marry you, Juliana."
+          },
+          {
+            "order": 2,
+            "episode": 1,
+            "start_time": "01:49.50",
+            "end_time": "02:07.50",
+            "duration_sec": 18.0,
+            "role": "Cliffhanger: I cannot marry a woman of such plainness and low value..."
+          }
+        ],
+        "hook": {
+          "timestamp_start": "00:00.00",
+          "description": "Opens on: I cannot marry you, Juliana."
+        },
+        "cliffhanger": {
+          "timestamp_end": "02:07.50",
+          "description": "Ends on: I cannot marry a woman of such plainness and low value..."
+        },
+        "why_it_works": "The first beat establishes an immediate injustice; the second resolves into a separate high-stakes reveal.",
+        "posting_priority_rationale": "Prioritized by source-scene conflict intensity, immediate hook cues, and a high-stakes ending. Offline ranking is heuristic and should be reviewed by an editor."
+      },
+      {
+        "rank": 2,
+        "promo_title": "Power reversal: Medium shot of Juliana kneeling on the frozen soil at the ",
+        "promo_type": "Multi-Segment Arc",
+        "target_audience_appeal": "Viewers drawn to betrayal, status conflict, and a heroine facing public pressure.",
+        "total_duration_sec": 32.0,
+        "segments": [
+          {
+            "order": 1,
+            "episode": 13,
+            "start_time": "00:45.80",
+            "end_time": "00:59.80",
+            "duration_sec": 14.0,
+            "role": "Hook: Medium shot of Juliana kneeling on the frozen soil at the edge of the briars."
+          },
+          {
+            "order": 2,
+            "episode": 1,
+            "start_time": "00:23.20",
+            "end_time": "00:41.20",
+            "duration_sec": 18.0,
+            "role": "Cliffhanger: Because he is marrying me."
+          }
+        ],
+        "hook": {
+          "timestamp_start": "00:45.80",
+          "description": "Opens on: Medium shot of Juliana kneeling on the frozen soil at the edge of the briars."
+        },
+        "cliffhanger": {
+          "timestamp_end": "00:41.20",
+          "description": "Ends on: Because he is marrying me."
+        },
+        "why_it_works": "The first beat establishes an immediate injustice; the second resolves into a separate high-stakes reveal.",
+        "posting_priority_rationale": "Prioritized by source-scene conflict intensity, immediate hook cues, and a high-stakes ending. Offline ranking is heuristic and should be reviewed by an editor."
+      },
+      {
+        "rank": 3,
+        "promo_title": "Power reversal: Lady Juliana Ashcroft, you are accused of witchcraft, unla",
+        "promo_type": "Multi-Segment Arc",
+        "target_audience_appeal": "Viewers drawn to betrayal, status conflict, and a heroine facing public pressure.",
+        "total_duration_sec": 32.0,
+        "segments": [
+          {
+            "order": 1,
+            "episode": 34,
+            "start_time": "00:01.20",
+            "end_time": "00:15.20",
+            "duration_sec": 14.0,
+            "role": "Hook: Lady Juliana Ashcroft, you are accused of witchcraft, unlawful healing, and poisoning."
+          },
+          {
+            "order": 2,
+            "episode": 28,
+            "start_time": "01:13.00",
+            "end_time": "01:31.00",
+            "duration_sec": 18.0,
+            "role": "Cliffhanger: Medium shot of Catherine walking toward the fallen leather-bound book and kneeling gracefully to pick it up."
+          }
+        ],
+        "hook": {
+          "timestamp_start": "00:01.20",
+          "description": "Opens on: Lady Juliana Ashcroft, you are accused of witchcraft, unlawful healing, and poisoning."
+        },
+        "cliffhanger": {
+          "timestamp_end": "01:31.00",
+          "description": "Ends on: Medium shot of Catherine walking toward the fallen leather-bound book and kneeling gracefully to pick it up."
+        },
+        "why_it_works": "The first beat establishes an immediate injustice; the second resolves into a separate high-stakes reveal.",
+        "posting_priority_rationale": "Prioritized by source-scene conflict intensity, immediate hook cues, and a high-stakes ending. Offline ranking is heuristic and should be reviewed by an editor."
+      },
+      {
+        "rank": 4,
+        "promo_title": "Power reversal: Your mother's little book of weeds?",
+        "promo_type": "Multi-Segment Arc",
+        "target_audience_appeal": "Viewers drawn to betrayal, status conflict, and a heroine facing public pressure.",
+        "total_duration_sec": 32.0,
+        "segments": [
+          {
+            "order": 1,
+            "episode": 29,
+            "start_time": "00:21.00",
+            "end_time": "00:35.00",
+            "duration_sec": 14.0,
+            "role": "Hook: Your mother's little book of weeds?"
+          },
+          {
+            "order": 2,
+            "episode": 32,
+            "start_time": "02:00.60",
+            "end_time": "02:18.60",
+            "duration_sec": 18.0,
+            "role": "Cliffhanger: You have to threaten a chained woman to feel powerful!"
+          }
+        ],
+        "hook": {
+          "timestamp_start": "00:21.00",
+          "description": "Opens on: Your mother's little book of weeds?"
+        },
+        "cliffhanger": {
+          "timestamp_end": "02:18.60",
+          "description": "Ends on: You have to threaten a chained woman to feel powerful!"
+        },
+        "why_it_works": "The first beat establishes an immediate injustice; the second resolves into a separate high-stakes reveal.",
+        "posting_priority_rationale": "Prioritized by source-scene conflict intensity, immediate hook cues, and a high-stakes ending. Offline ranking is heuristic and should be reviewed by an editor."
+      },
+      {
+        "rank": 5,
+        "promo_title": "Power reversal: Medium shot of Juliana kneeling on the cold, damp ground o",
+        "promo_type": "Multi-Segment Arc",
+        "target_audience_appeal": "Viewers drawn to betrayal, status conflict, and a heroine facing public pressure.",
+        "total_duration_sec": 32.0,
+        "segments": [
+          {
+            "order": 1,
+            "episode": 7,
+            "start_time": "00:00.00",
+            "end_time": "00:14.00",
+            "duration_sec": 14.0,
+            "role": "Hook: Medium shot of Juliana kneeling on the cold, damp ground outside the stone cottage, pulling weeds from the dirt with her…"
+          },
+          {
+            "order": 2,
+            "episode": 1,
+            "start_time": "01:00.50",
+            "end_time": "01:18.50",
+            "duration_sec": 18.0,
+            "role": "Cliffhanger: Long enough to know he was never going to marry you."
+          }
+        ],
+        "hook": {
+          "timestamp_start": "00:00.00",
+          "description": "Opens on: Medium shot of Juliana kneeling on the cold, damp ground outside the stone cottage, pulling weeds from the dirt with her…"
+        },
+        "cliffhanger": {
+          "timestamp_end": "01:18.50",
+          "description": "Ends on: Long enough to know he was never going to marry you."
+        },
+        "why_it_works": "The first beat establishes an immediate injustice; the second resolves into a separate high-stakes reveal.",
+        "posting_priority_rationale": "Prioritized by source-scene conflict intensity, immediate hook cues, and a high-stakes ending. Offline ranking is heuristic and should be reviewed by an editor."
+      },
+      {
+        "rank": 6,
+        "promo_title": "Power reversal: Put out your hands, veteran. You are under arrest for thef",
+        "promo_type": "Multi-Segment Arc",
+        "target_audience_appeal": "Viewers drawn to betrayal, status conflict, and a heroine facing public pressure.",
+        "total_duration_sec": 32.0,
+        "segments": [
+          {
+            "order": 1,
+            "episode": 12,
+            "start_time": "00:00.50",
+            "end_time": "00:14.50",
+            "duration_sec": 14.0,
+            "role": "Hook: Put out your hands, veteran. You are under arrest for theft."
+          },
+          {
+            "order": 2,
+            "episode": 1,
+            "start_time": "01:35.00",
+            "end_time": "01:53.00",
+            "duration_sec": 18.0,
+            "role": "Cliffhanger: I am the daughter they choose."
+          }
+        ],
+        "hook": {
+          "timestamp_start": "00:00.50",
+          "description": "Opens on: Put out your hands, veteran. You are under arrest for theft."
+        },
+        "cliffhanger": {
+          "timestamp_end": "01:53.00",
+          "description": "Ends on: I am the daughter they choose."
+        },
+        "why_it_works": "The first beat establishes an immediate injustice; the second resolves into a separate high-stakes reveal.",
+        "posting_priority_rationale": "Prioritized by source-scene conflict intensity, immediate hook cues, and a high-stakes ending. Offline ranking is heuristic and should be reviewed by an editor."
+      },
+      {
+        "rank": 7,
+        "promo_title": "Power reversal: Father Thomas, clad in a hooded dark mantle over priestly ",
+        "promo_type": "Multi-Segment Arc",
+        "target_audience_appeal": "Viewers drawn to betrayal, status conflict, and a heroine facing public pressure.",
+        "total_duration_sec": 32.0,
+        "segments": [
+          {
+            "order": 1,
+            "episode": 49,
+            "start_time": "00:01.80",
+            "end_time": "00:15.80",
+            "duration_sec": 14.0,
+            "role": "Hook: Father Thomas, clad in a hooded dark mantle over priestly black robes, secures the door behind him and steps into the sh…"
+          },
+          {
+            "order": 2,
+            "episode": 28,
+            "start_time": "00:34.10",
+            "end_time": "00:52.10",
+            "duration_sec": 18.0,
+            "role": "Cliffhanger: She's still weak, you cannot leave her like this!"
+          }
+        ],
+        "hook": {
+          "timestamp_start": "00:01.80",
+          "description": "Opens on: Father Thomas, clad in a hooded dark mantle over priestly black robes, secures the door behind him and steps into the sh…"
+        },
+        "cliffhanger": {
+          "timestamp_end": "00:52.10",
+          "description": "Ends on: She's still weak, you cannot leave her like this!"
+        },
+        "why_it_works": "The first beat establishes an immediate injustice; the second resolves into a separate high-stakes reveal.",
+        "posting_priority_rationale": "Prioritized by source-scene conflict intensity, immediate hook cues, and a high-stakes ending. Offline ranking is heuristic and should be reviewed by an editor."
+      },
+      {
+        "rank": 8,
+        "promo_title": "Single-scene cut: Warm interior wide shot in front of a roaring hearth fire.",
+        "promo_type": "Single-Scene Punch",
+        "target_audience_appeal": "Viewers drawn to betrayal, status conflict, and a heroine facing public pressure.",
+        "total_duration_sec": 26.3,
+        "segments": [
+          {
+            "order": 1,
+            "episode": 14,
+            "start_time": "00:43.50",
+            "end_time": "01:09.80",
+            "duration_sec": 26.3,
+            "role": "Hook and escalation: Warm interior wide shot in front of a roaring hearth fire. Juliana sits on a wooden chair while Alexander kneels on the …"
+          }
+        ],
+        "hook": {
+          "timestamp_start": "00:43.50",
+          "description": "Opens on: Warm interior wide shot in front of a roaring hearth fire. Juliana sits on a wooden chair while Alexander kneels on the …"
+        },
+        "cliffhanger": {
+          "timestamp_end": "01:09.80",
+          "description": "Ends on: And you are doing it better than me."
+        },
+        "why_it_works": "A continuous escalation builds from an immediate conflict cue to a timed dramatic peak.",
+        "posting_priority_rationale": "Prioritized by source-scene conflict intensity, immediate hook cues, and a high-stakes ending. Offline ranking is heuristic and should be reviewed by an editor."
+      },
+      {
+        "rank": 9,
+        "promo_title": "Single-scene cut: High angle wide shot looking down at the muddy, trampled g",
+        "promo_type": "Single-Scene Punch",
+        "target_audience_appeal": "Viewers drawn to betrayal, status conflict, and a heroine facing public pressure.",
+        "total_duration_sec": 34.2,
+        "segments": [
+          {
+            "order": 1,
+            "episode": 17,
+            "start_time": "00:00.00",
+            "end_time": "00:34.20",
+            "duration_sec": 34.2,
+            "role": "Hook and escalation: High angle wide shot looking down at the muddy, trampled garden. Broken wooden planters and splintered planks litter the…"
+          }
+        ],
+        "hook": {
+          "timestamp_start": "00:00.00",
+          "description": "Opens on: High angle wide shot looking down at the muddy, trampled garden. Broken wooden planters and splintered planks litter the…"
+        },
+        "cliffhanger": {
+          "timestamp_end": "00:34.20",
+          "description": "Ends on: You cannot promise that."
+        },
+        "why_it_works": "A continuous escalation builds from an immediate conflict cue to a timed dramatic peak.",
+        "posting_priority_rationale": "Prioritized by source-scene conflict intensity, immediate hook cues, and a high-stakes ending. Offline ranking is heuristic and should be reviewed by an editor."
+      },
+      {
+        "rank": 10,
+        "promo_title": "Single-scene cut: Medium close-up tilting down on JULIANA kneeling in the st",
+        "promo_type": "Single-Scene Punch",
+        "target_audience_appeal": "Viewers drawn to betrayal, status conflict, and a heroine facing public pressure.",
+        "total_duration_sec": 31.5,
+        "segments": [
+          {
+            "order": 1,
+            "episode": 20,
+            "start_time": "00:56.50",
+            "end_time": "01:28.00",
+            "duration_sec": 31.5,
+            "role": "Hook and escalation: Medium close-up tilting down on JULIANA kneeling in the straw beside a rustic wooden crate, sorting sprigs of dried lave…"
+          }
+        ],
+        "hook": {
+          "timestamp_start": "00:56.50",
+          "description": "Opens on: Medium close-up tilting down on JULIANA kneeling in the straw beside a rustic wooden crate, sorting sprigs of dried lave…"
+        },
+        "cliffhanger": {
+          "timestamp_end": "01:28.00",
+          "description": "Ends on: And I am not finished."
+        },
+        "why_it_works": "A continuous escalation builds from an immediate conflict cue to a timed dramatic peak.",
+        "posting_priority_rationale": "Prioritized by source-scene conflict intensity, immediate hook cues, and a high-stakes ending. Offline ranking is heuristic and should be reviewed by an editor."
+      }
+    ]
+  }
+}
