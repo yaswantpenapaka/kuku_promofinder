@@ -296,7 +296,10 @@ def main() -> None:
             value=model_name,
             help="Model names depend on availability for your Gemini API key.",
         )
-        st.caption("Or use the default local screenplay archive when no upload is selected.")
+        if DEFAULT_ZIP.is_file() or DEFAULT_DIRECTORY.is_dir():
+            st.caption("Or use the default local screenplay archive when no upload is selected.")
+        else:
+            st.caption("Upload a screenplay ZIP to analyze it. The sample screenplay is not bundled with the hosted app.")
         analyze = st.button("Analyze scripts", type="primary", width="stretch")
 
     if analyze:

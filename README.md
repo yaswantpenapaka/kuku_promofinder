@@ -29,6 +29,8 @@ artifacts are written to `outputs/`, which is ignored by Git.
 
 ## Deploy on Streamlit Community Cloud
 
+Live app: https://kukupromofinder-8ay8irvrkpuqshzaqfactt.streamlit.app/
+
 1. Push this repository to GitHub without adding `.env` or screenplay files.
 2. In Streamlit Community Cloud, create an app from this repository and select
    `app.py` as the entry point.
