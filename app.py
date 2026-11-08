@@ -37,10 +37,18 @@ st.markdown(
     """
     <style>
     .promo-meta { color: #64748b; font-size: .9rem; }
-    .script-line { padding: .42rem .65rem; margin: .25rem 0; border-radius: .4rem; white-space: pre-wrap; }
-    .hook-line { background: #fee2e2; border-left: 4px solid #ef4444; }
-    .body-line { background: #fef3c7; border-left: 4px solid #eab308; }
-    .cliff-line { background: #dcfce7; border-left: 4px solid #22c55e; }
+    .script-line {
+        color: #172033 !important;
+        padding: .55rem .75rem;
+        margin: .3rem 0;
+        border-radius: .4rem;
+        white-space: pre-wrap;
+        line-height: 1.55;
+    }
+    .script-line b { color: #111827 !important; }
+    .hook-line { background: #fff1f2; border-left: 4px solid #be123c; }
+    .body-line { background: #fffbeb; border-left: 4px solid #b45309; }
+    .cliff-line { background: #f0fdf4; border-left: 4px solid #15803d; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -64,7 +72,7 @@ def _read_input(upload: object | None) -> tuple[list[Episode], bytes, str]:
             digest.update(path.relative_to(DEFAULT_DIRECTORY).as_posix().encode("utf-8"))
             digest.update(path.read_bytes())
         return episodes, digest.digest(), DEFAULT_DIRECTORY.name
-    raise FileNotFoundError("Upload a screenplay ZIP or add the default script ZIP beside the prototype folder.")
+    raise FileNotFoundError("Upload a screenplay ZIP to start analysis.")
 
 
 def _source_excerpt(
@@ -121,6 +129,17 @@ def _clip_specs(promo: dict) -> str:
             f"({segment['duration_sec']:.1f}s) — {segment['role']}"
         )
     return "\n".join(lines)
+
+
+def _gemini_settings() -> tuple[str, str]:
+    api_key = os.getenv("GEMINI_API_KEY", "").strip().strip('"').strip("'")
+    model_name = os.getenv("GEMINI_MODEL", "gemini-3.8-flash").strip()
+    try:
+        api_key = str(st.secrets.get("GEMINI_API_KEY", api_key)).strip().strip('"').strip("'")
+        model_name = str(st.secrets.get("GEMINI_MODEL", model_name)).strip()
+    except st.errors.StreamlitSecretNotFoundError:
+        pass
+    return api_key, model_name or "gemini-3.8-flash"
 
 
 def _export_csv(response: dict) -> bytes:
@@ -266,15 +285,15 @@ def main() -> None:
     with st.sidebar:
         st.header("Analyze a screenplay")
         upload = st.file_uploader("Upload episode ZIP", type=["zip"])
-        api_key = os.getenv("GEMINI_API_KEY", "").strip().strip('"').strip("'")
+        api_key, model_name = _gemini_settings()
         st.caption(
-            "Gemini API key loaded from `.env`."
+            "Gemini API key is configured."
             if api_key
-            else "No Gemini API key found in `.env`; offline mode will be used."
+            else "No Gemini API key configured; offline mode will be used."
         )
         model_name = st.text_input(
             "Gemini model",
-            value=os.getenv("GEMINI_MODEL", "gemini-3.8-flash"),
+            value=model_name,
             help="Model names depend on availability for your Gemini API key.",
         )
         st.caption("Or use the default local screenplay archive when no upload is selected.")

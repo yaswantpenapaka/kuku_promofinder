@@ -27,6 +27,15 @@ The app uses the sibling `I Married a Broken Soldier. He was a Duke-script.zip`
 by default, or accepts an uploaded `.zip` of episode `.txt` files. Analysis
 artifacts are written to `outputs/`, which is ignored by Git.
 
+## Deploy on Streamlit Community Cloud
+
+1. Push this repository to GitHub without adding `.env` or screenplay files.
+2. In Streamlit Community Cloud, create an app from this repository and select
+   `app.py` as the entry point.
+3. Add `GEMINI_API_KEY` and optionally `GEMINI_MODEL` in the app's Secrets
+   settings. Never commit API keys to GitHub.
+4. Open the deployed app and upload a screenplay ZIP to analyze it.
+
 ## Validation and exports
 
 Every candidate's timestamps must fit within a parsed scene, and segment
